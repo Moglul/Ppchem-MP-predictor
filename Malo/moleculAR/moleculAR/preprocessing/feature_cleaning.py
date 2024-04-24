@@ -107,7 +107,7 @@ def descriptor_selection(df, exclude_cols = None, min_variance=0.05, max_correla
 
     return final_df
 
-def handle_missing_data(df, excluded_cols = None, threshold=0.8, fill_method="mean"):
+def handle_missing_data(df, excluded_cols = [], threshold=0.8, fill_method="mean"):
     """
     Handles missing data in a DataFrame based on the percentage of non-missing data per column.
     Columns with non-missing data above a specified threshold are filled with either the mean or median,
@@ -115,6 +115,7 @@ def handle_missing_data(df, excluded_cols = None, threshold=0.8, fill_method="me
 
     Parameters:
     - df (pd.DataFrame): DataFrame containing the data with potential missing values.
+    - excluded_cols (list): List of column names to exclude from missing data handling.
     - threshold (float): Proportion of non-missing values required to keep and fill the column. 
                          Values range from 0 to 1, where 1 means no missing values are allowed for the column to be retained.
     - fill_method (str): Method for filling missing values. Options: 'mean', 'median'
@@ -122,9 +123,12 @@ def handle_missing_data(df, excluded_cols = None, threshold=0.8, fill_method="me
     Returns:
     - pd.DataFrame: DataFrame with handled missing data, where columns with too many missing values have been removed and others filled.
     """
-    # Separate excluded columns from the DataFrame
-    df_excluded = df[excluded_cols]
-    df_selected = df.drop(columns=excluded_cols)
+    df_selected = df.copy()
+    df_excluded = pd.DataFrame()
+    # Separate excluded columns from the DataFrame if needed
+    if len(excluded_cols) != 0 :
+        df_excluded = df[excluded_cols]
+        df_selected = df.drop(columns=excluded_cols)
 
     # Iterate over each column and decide to fill or remove
     for column in df_selected.columns:

@@ -1,3 +1,4 @@
+import rdkit
 from rdkit import Chem
 from rdkit.Chem import rdMolDescriptors, MACCSkeys, RDKFingerprint, Descriptors
 import pandas as pd
@@ -72,9 +73,13 @@ def generate_fingerprint_descriptors(df, smiles_column='SMILES', fingerprint_typ
 
     # Create a new DataFrame for the fingerprints
     fingerprint_df = pd.DataFrame(fingerprints.tolist(), columns=[f'{fingerprint_type}_bit_{i}' for i in range(len(fingerprints.iloc[0]))])
+
+    # Set the index of the fingerprints DataFrame to match the original DataFrame
+    fingerprint_df.index = df.index
+
     # Add fingerprint columns to the original DataFrame
     df = pd.concat([df, fingerprint_df], axis=1)
-    
+
     return df
 
 def RDkit_descriptors(df, smiles_column='SMILES'):

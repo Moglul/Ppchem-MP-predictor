@@ -8,13 +8,16 @@ from xgboost import XGBRegressor
 from lightgbm import LGBMRegressor
 import matplotlib.pyplot as plt
 
-def compare_regression_models(X, y, test_size=0.2, random_state=12):
+def compare_regression_models(X, y, test_size=0.2, random_state=12, models=None):
     """
     Trains various regression models and evaluates them on the provided dataset.
     
     Parameters:
     - X (pd.DataFrame): Feature data.
     - y (pd.Series): Target data.
+    - test_size (float or int): The proportion of the dataset to include in the test split.
+    - random_state (int): Controls the shuffling applied to the data before applying the split.
+    - models (list or None): List of model names to try. If None, all models will be tried.
     
     Returns:
     - pd.DataFrame: DataFrame containing the R2 and RMSE scores for each model.
@@ -23,7 +26,7 @@ def compare_regression_models(X, y, test_size=0.2, random_state=12):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
     
     # Initialize models
-    models = {
+    all_models = {
         'Linear Regression': LinearRegression(),
         'Random Forest': RandomForestRegressor(n_estimators=100),
         'Gradient Boosting': GradientBoostingRegressor(n_estimators=100),
@@ -31,11 +34,17 @@ def compare_regression_models(X, y, test_size=0.2, random_state=12):
         'LightGBM': LGBMRegressor()
     }
     
+    if models is None:
+        models = list(all_models.keys())  # If models are not specified, try all models
+    
+    # Filter models based on user input
+    models_to_try = {name: model for name, model in all_models.items() if name in models}
+    
     # Dictionary to store scores
     scores = {}
 
     # Train and evaluate each model
-    for name, model in models.items():
+    for name, model in models_to_try.items():
         model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
         rmse = float(np.sqrt(mean_squared_error(y_test, y_pred)))

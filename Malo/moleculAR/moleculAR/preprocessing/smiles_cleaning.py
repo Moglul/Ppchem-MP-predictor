@@ -1,8 +1,5 @@
 from rdkit import Chem
-from rdkit import Chem
 import pandas as pd
-import numpy as np
-from rdkit import Chem
 from rdkit.Chem import Descriptors
 from rdkit.Chem import AllChem
 
@@ -46,7 +43,7 @@ def clean_smiles_dataframe(df, column = "SMILES"):
 
     # Remove rows with invalid SMILES
     valid_smiles_mask = df[column].apply(lambda x: Chem.MolFromSmiles(x) is not None)
-    df_valid_smiles = df.loc[valid_smiles_mask]
+    df_valid_smiles = df.loc[valid_smiles_mask].copy()
 
     # Remove rows with duplicate canonical SMILES
     df_valid_smiles.loc[:, 'canonical_smiles'] = df_valid_smiles[column].apply(canonical_smiles)
