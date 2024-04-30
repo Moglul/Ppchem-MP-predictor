@@ -5,7 +5,7 @@ from rdkit.Chem import rdMolDescriptors, MACCSkeys, RDKFingerprint
 from sklearn.feature_selection import VarianceThreshold
 from sklearn.preprocessing import StandardScaler
 
-def remove_low_variance_features(df, excluded_cols = None, threshold=0.05):
+def remove_low_variance_features(df, excluded_cols = [], threshold=0.05):
     """
     Removes low variance columns from a DataFrame, ignoring excluded_cols columns.
 
