@@ -5,7 +5,9 @@ import pandas as pd
 arguments = [
         '--test_path', '/dev/null',
         '--preds_path', '/dev/null',
-        '--checkpoint_dir', '../'
+        '--checkpoint_dir', '../',
+        '--no_cuda',
+        '--num_workers', '0'
         ]
 
 args = chemprop.args.PredictArgs().parse_args(arguments)
