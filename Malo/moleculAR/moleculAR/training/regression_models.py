@@ -8,7 +8,7 @@ from xgboost import XGBRegressor
 from lightgbm import LGBMRegressor
 import matplotlib.pyplot as plt
 
-def compare_regression_models(X, y, test_size=0.2, random_state=12, models=None):
+def compare_regression_models(X, y, test_size=0.2, random_state=12, models=None, n_estimators=100):
     """
     Trains various regression models and evaluates them on the provided dataset.
     
@@ -28,8 +28,8 @@ def compare_regression_models(X, y, test_size=0.2, random_state=12, models=None)
     # Initialize models
     all_models = {
         'Linear Regression': LinearRegression(),
-        'Random Forest': RandomForestRegressor(n_estimators=100),
-        'Gradient Boosting': GradientBoostingRegressor(n_estimators=100),
+        'Random Forest': RandomForestRegressor(n_estimators=n_estimators),
+        'Gradient Boosting': GradientBoostingRegressor(n_estimators=n_estimators),
         'XGBoost': XGBRegressor(objective='reg:squarederror'),
         'LightGBM': LGBMRegressor()
     }
