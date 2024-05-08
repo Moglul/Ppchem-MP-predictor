@@ -5,9 +5,11 @@ import pandas as pd
 arguments = [
         '--test_path', '/dev/null',
         '--preds_path', '/dev/null',
-        '--checkpoint_dir', '../',
+        '--checkpoint_dir', '../../',
         '--no_cuda',
-        '--num_workers', '0'
+        '--num_workers', '0',
+        '--features_generator', 'rdkit_2d_normalized',  # Include the same feature generator used during training
+        '--no_features_scaling'
         ]
 
 args = chemprop.args.PredictArgs().parse_args(arguments)
