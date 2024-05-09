@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "MP_predictor_project"
+version = "1.0"
+description = 'MP predictor of organic molecules'
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file="LICENSE.txt"}
+keywords = []
+authors = [
+  { name = "Malo Gfeller", email = "malo.gfeller@gmail.com" },
+  { name = "Ricardo Meireles Rainho", email = "ricardo.meirelesrainho@epfl.ch" }
+]
+dependencies = [
+    "tk",
+    "customtkinter>=5.2.2",
+    "pathlib>=1.0.1",
+    "pillow>=10.3.0",
+    "keyboard>=0.13.5",
+    "rdkit>=2023.9.6",
+    "descriptastorus>=2.6.1",
+    "chemprop>=1.7.1",
+    "pandas>=2.0.3",
+    "ipykernel>=6.29.3"
+]
