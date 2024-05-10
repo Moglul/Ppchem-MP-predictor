@@ -11,7 +11,7 @@ requires-python = ">=3.8"
 license = {file="LICENSE.txt"}
 keywords = ["machine learning", "chemistry", "GUI", "web scraping"]
 authors = [
-  { name = "Malo Gfeller", email = "malo.gfeller@gmail.com" },
+  { name = "Malo Gfeller", email = "malo.gfeller@epfl.ch" },
   { name = "Ricardo Meireles Rainho", email = "ricardo.meirelesrainho@epfl.ch" }
 ]
 dependencies = [
