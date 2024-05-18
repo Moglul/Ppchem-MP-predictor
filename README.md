@@ -29,7 +29,7 @@ This project combines various cheminformatics methods, such as machine learning,
 ## :computer: Usage
 There are two ways to use the program. It's possible to launch it through a graphical interface which allows visualization of the molecule at the same time. But it is also possible to launch only the predictor without any interface.
 
-The program requires the SMILES of the molecule in question to predict its melting point. Once the SMILES is entered, the prediction starts and in the case of the interface, the visualization of the molecule appears in the dedicated area. It's important to write the SMILES according to the regulations.
+The program requires the SMILES of the molecule to predict its melting point. Once the SMILES is entered, the prediction starts and in the case of the interface, the visualization of the molecule appears in the dedicated area. It's important to write the SMILES according to the regulations.
 
 ### Launching Windows interface 
 Open a shell and paste the following lines
