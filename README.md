@@ -1,5 +1,5 @@
-
 # Melting point predictor
+[![python - 3.8](https://img.shields.io/badge/python-3.8-blue)](https://) [![Conda - 24.3.0](https://img.shields.io/badge/Conda-24.3.0-blue)](https://) [![License - MIT](https://img.shields.io/badge/License-MIT-yellow)](https://)
 ## :wrench: Installation
 
 1. Install [Conda](https://conda.io/projects/conda/en/latest/index.html)
@@ -7,12 +7,12 @@
 ```
 git clone https://github.com/Moglul/Ppchem-MP-predictor.git
 ```
-4. Create and activate the Conda environment
+3. Create and activate the Conda environment
 ```
 conda create -n <env_name> python=3.8
 conda activate <env_name>
 ```
-6. Go to the repository folder and install all required librairies
+4. Go to the repository folder and install all required librairies
 ```
 cd <path_of_repository>
 pip install -e .
@@ -28,6 +28,9 @@ This project combines various cheminformatics methods, such as machine learning,
 
 ## :computer: Usage
 There are two ways to use the program. It's possible to launch it through a graphical interface which allows visualization of the molecule at the same time. But it is also possible to launch only the predictor without any interface.
+
+The program requires the SMILES of the molecule in question to predict its melting point. Once the SMILES is entered, the prediction starts and in the case of the interface, the visualization of the molecule appears in the dedicated area. It's important to write the SMILES according to the regulations.
+
 ### Launching Windows interface 
 Open a shell and paste the following lines
 ```
@@ -49,4 +52,25 @@ cd ../Ppchem-MP-predictor/src/MP_predictor_project
 python NO_GUI_predictor.py
 ```
 
-The program requires the SMILES of the molecule in question to predict its melting point. Once the SMILES is entered, the prediction starts and in the case of the interface, the visualization of the molecule appears in the dedicated area. It's important to write the SMILES according to the regulations.
+<br />
+Here is an image showing the interface under Windows, the example of methanol has been taken. A melting point of -98.3°C is predicted, the actual melting point of methanol is -97.6°C.
+<br><br><br>
+<p align="center">
+  <img src="assets/screen_interface.png" width="450" alt="Screen Interface">
+  <br>
+  <em>Figure 1: Screenshot of the interface with example of methanol.</em>
+</p>
+
+## :zap: Features
+
+### Melting Point Prediction
+
+- **Accurate Modeling:** Our melting point predictor utilizes machine learning algorithms to provide relatively precises estimations of the melting points of organic molecules.
+- **Intuitive Interface:** Integrated into a user-friendly interface, allowing users to quickly predict the melting point of their organic compounds with just a few simple clicks.
+- **Fast Execution:** Offers quick response times, enabling users to swiftly obtain the results they need for their research or projects.
+
+### Molecule Visualization
+
+- **Graphical Representation:** Our tool provides a graphical representation of molecular structures, allowing users to visually analyze compounds.
+- **Compatibility with Organic Molecules:** Specifically designed for the visualization of organic molecules, providing a clear and detailed view of chemical structures.
+- **Limited Interactivity:** While the interface does not offer 3D visualization, it still provides a helpful visual representation of molecules, facilitating the understanding of their structure and properties.
