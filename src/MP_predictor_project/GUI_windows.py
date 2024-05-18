@@ -303,7 +303,7 @@ def start_gui():
         465.0,
         401.0,
         anchor="nw",
-        text="This program has been developed to predict the melting \npoint of certain organic molecules. Our program \nwas trained by Mordred descriptors, more details in",
+        text="This program has been developed to predict the melting \npoint of organic molecules. The program is based on a \nMPNN, developped using chemprop, more details in",
         fill="#FFFFFF",
         font=("Gill Sans MT", 12 * -1)
     )
