@@ -46,5 +46,6 @@ while status:
         # Case if the input is not valid
         else:
             print("Invalid input. Please enter 'y' or 'n'.")
+    # Reset the loop variable
     i = True
     
