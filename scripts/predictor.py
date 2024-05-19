@@ -1,6 +1,14 @@
-import chemprop
 import pandas as pd
+import logging
+import chemprop
+import sys
+from io import StringIO
 
+# Redirection of the standard output and standard error to avoid printing the output of the prediction function
+old_stdout = sys.stdout
+old_stderr = sys.stderr
+sys.stdout = StringIO()
+sys.stderr = StringIO()
 
 arguments = [
         '--test_path', '/dev/null',
@@ -23,3 +31,7 @@ def prediction(smiles) :
     preds = chemprop.train.make_predictions(args=args, smiles=smiles, model_objects=model_objects)
 
     return preds[0][0]
+
+# Reset the standard output and standard error
+sys.stdout = old_stdout
+sys.stderr = old_stderr
