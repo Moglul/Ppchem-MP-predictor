@@ -60,17 +60,3 @@ Here is an image showing the interface under Windows, the example of methanol ha
   <br>
   <em>Figure 1: Screenshot of the interface with example of methanol.</em>
 </p>
-
-## :zap: Features
-
-### Melting Point Prediction
-
-- **Accurate Modeling:** Our melting point predictor utilizes machine learning algorithms to provide relatively precises estimations of the melting points of organic molecules.
-- **Intuitive Interface:** Integrated into a user-friendly interface, allowing users to quickly predict the melting point of their organic compounds with just a few simple clicks.
-- **Fast Execution:** Offers quick response times, enabling users to swiftly obtain the results they need for their research or projects.
-
-### Molecule Visualization
-
-- **Graphical Representation:** Our tool provides a graphical representation of molecular structures, allowing users to visually analyze compounds.
-- **Compatibility with Organic Molecules:** Specifically designed for the visualization of organic molecules, providing a clear and detailed view of chemical structures.
-- **Limited Interactivity:** While the interface does not offer 3D visualization, it still provides a helpful visual representation of molecules, facilitating the understanding of their structure and properties.
