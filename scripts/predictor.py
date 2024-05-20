@@ -19,6 +19,8 @@ model_objects = chemprop.train.load_model(args=args)
 args = chemprop.args.PredictArgs().parse_args(arguments)
 
 def prediction(smiles) :
+    if smiles == '' or smiles.isspace():
+        raise Exception('Empty SMILES string provided')
     smiles = [[smiles]]
     preds = chemprop.train.make_predictions(args=args, smiles=smiles, model_objects=model_objects)
 
