@@ -8,7 +8,7 @@ from xgboost import XGBRegressor
 from lightgbm import LGBMRegressor
 import matplotlib.pyplot as plt
 
-def compare_regression_models(X, y, test_size=0.2, random_state=12, models=None, n_estimators=100):
+def compare_regression_models(X, y, test_size=0.2, random_state=12, models=None, n_estimators=50):
     """
     Trains various regression models and evaluates them on the provided dataset.
     
