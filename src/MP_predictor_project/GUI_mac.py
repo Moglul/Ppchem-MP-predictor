@@ -25,8 +25,6 @@ import webbrowser
 # Allows you to perform two processes simultaneously, such as interface and prediction
 import threading
 
-from .scripts.predictor import prediction
-"""
 # Get the directory of the current script
 current_dir = Path(__file__).resolve().parent
 # Construct the relative path to the scripts directory
@@ -35,7 +33,7 @@ scripts_dir = current_dir.parent.parent / 'scripts'
 sys.path.append(str(scripts_dir))
 # Import of the function
 from predictor import prediction
-"""
+
 
 
 # start_gui function to create the GUI
@@ -152,7 +150,7 @@ def start_gui():
             orientation="HORIZONTAL", 
             mode="indeterminate", 
             height=3, 
-            width=640, 
+            width=800, 
             fg_color="#1A1A1A", 
             bg_color="#1A1A1A", 
             border_color="#1A1A1A", 
@@ -161,7 +159,7 @@ def start_gui():
         )
 
         # Defines the position and displays it
-        progress_bar.pack(pady=73)
+        progress_bar.pack(pady=89)
         progress_bar.start()
 
 
@@ -301,7 +299,7 @@ def start_gui():
         465.0,
         401.0,
         anchor="nw",
-        text="This program has been developed to predict the \nmelting point of certain organic molecules. \nOur program was trained by Mordred descriptors,\nmore details in",
+        text="This program has been developed to predict the\nmelting point of organic molecules. The program is\nbased on a MPNN, developped using chemprop, more\ndetails on :",
         fill="#FFFFFF",
         font=("Gill Sans MT", 11 * -1)
     )
