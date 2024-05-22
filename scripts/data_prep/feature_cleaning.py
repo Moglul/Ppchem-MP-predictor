@@ -34,7 +34,7 @@ def remove_low_variance_features(df, excluded_cols = [], threshold=0.05):
 
     return final_df
 
-def remove_highly_correlated(df, excluded_cols = None, threshold=0.95):
+def remove_highly_correlated_features(df, excluded_cols = None, threshold=0.95):
     """
     Removes highly correlated columns from a DataFrame, keeping only one column from each group of highly correlated columns.
     Excludes string columns and certain specified columns from the correlation analysis.

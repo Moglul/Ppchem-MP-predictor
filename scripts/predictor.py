@@ -15,7 +15,7 @@ arguments = [
         '--preds_path', '/dev/null',
         '--checkpoint_dir', '../../',
         '--no_cuda',
-        '--num_workers', '0',
+        '--num_workers', '0', # Avoid pytorch error for inference
         '--features_generator', 'rdkit_2d_normalized',  # Include the same feature generator used during training
         '--no_features_scaling'
         ]
@@ -23,8 +23,6 @@ arguments = [
 args = chemprop.args.PredictArgs().parse_args(arguments)
 
 model_objects = chemprop.train.load_model(args=args)
-
-args = chemprop.args.PredictArgs().parse_args(arguments)
 
 def prediction(smiles) :
     if smiles == '' or smiles.isspace():

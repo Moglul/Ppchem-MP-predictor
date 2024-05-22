@@ -25,6 +25,8 @@ import webbrowser
 # Allows you to perform two processes simultaneously, such as interface and prediction
 import threading
 
+from .scripts.predictor import prediction
+"""
 # Get the directory of the current script
 current_dir = Path(__file__).resolve().parent
 # Construct the relative path to the scripts directory
@@ -33,6 +35,7 @@ scripts_dir = current_dir.parent.parent / 'scripts'
 sys.path.append(str(scripts_dir))
 # Import of the function
 from predictor import prediction
+"""
 
 
 # start_gui function to create the GUI
