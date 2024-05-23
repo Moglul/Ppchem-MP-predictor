@@ -11,12 +11,6 @@ import sys
 import rdkit
 from rdkit import Chem
 
-# Get the directory of the current script
-current_dir = Path(__file__).resolve().parent
-# Construct the relative path to the scripts directory
-scripts_dir = current_dir.parent.parent / 'scripts'
-# Add the scripts directory to the Python path
-sys.path.append(str(scripts_dir))
 # Import of the function
 from predictor import prediction
 
@@ -26,11 +20,17 @@ status = True
 # Loop to make multiple predictions, or getting out of the program
 i = True
 
+# Print the welcome message
+print("Welcome to the Melting Point Predictor !\nIf you want to exit the programm, type 'exit'.")
+
 # Loop to make predictions
 while status:
     # Input of the SMILES, and check if it is valid
-    smiles = input("Enther the SMILES of the molecule: ")
-    if Chem.MolFromSmiles(smiles) is not None:
+    smiles = input("Enter the SMILES of the molecule: ")
+    if smiles == 'exit':
+        status = False
+        break
+    elif Chem.MolFromSmiles(smiles) is not None:
         print(f"The melting of this molecule is: {round(prediction(smiles),2)}°C")
     else:
         print("The SMILES is not valid.")
