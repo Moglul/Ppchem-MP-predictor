@@ -1,7 +1,6 @@
 import pytest
 import sys
-sys.path.append("..")
-from scripts.predictor import prediction
+from predictor import prediction
 
 
 def test_prediction_returns_float():

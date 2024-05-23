@@ -28,12 +28,6 @@ import threading
 # Ensures better process isolation
 import multiprocessing as mp
 
-# Get the directory of the current script
-current_dir = Path(__file__).resolve().parent
-# Construct the relative path to the scripts directory
-scripts_dir = current_dir.parent.parent / 'scripts'
-# Add the scripts directory to the Python path
-sys.path.append(str(scripts_dir))
 # Import of the function
 from predictor import prediction
 
@@ -303,7 +297,7 @@ def start_gui():
         465.0,
         401.0,
         anchor="nw",
-        text="This program has been developed to predict the melting \npoint of organic molecules. The program is based on a \nMPNN, developped using chemprop, more details in",
+        text="This program has been developed to predict the melting \npoint of organic molecules. The program is based on a \nMPNN, developped using chemprop, more details on :",
         fill="#FFFFFF",
         font=("Gill Sans MT", 12 * -1)
     )

@@ -25,12 +25,6 @@ import webbrowser
 # Allows you to perform two processes simultaneously, such as interface and prediction
 import threading
 
-# Get the directory of the current script
-current_dir = Path(__file__).resolve().parent
-# Construct the relative path to the scripts directory
-scripts_dir = current_dir.parent.parent / 'scripts'
-# Add the scripts directory to the Python path
-sys.path.append(str(scripts_dir))
 # Import of the function
 from predictor import prediction
 

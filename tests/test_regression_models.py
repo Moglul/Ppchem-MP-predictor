@@ -3,9 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn.datasets import make_regression
 import sys
-sys.path.append("..")
-from scripts.regression_models import compare_regression_models, plot_predictions
-from sklearn.linear_model import LinearRegression
+from regression_models import compare_regression_models
 
 # Create a sample regression dataset
 X, y = make_regression(n_samples=100, n_features=3, noise=0.3, random_state=142)
