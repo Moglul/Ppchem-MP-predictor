@@ -2,6 +2,7 @@ import rdkit
 from rdkit import Chem
 from rdkit.Chem import rdMolDescriptors, MACCSkeys, RDKFingerprint, Descriptors
 import pandas as pd
+from mordred import Calculator, descriptors
 from rdkit.ML.Descriptors import MoleculeDescriptors
 
 def generate_mordred_columns(df, smiles_column = "SMILES", ignore_3D = True):
